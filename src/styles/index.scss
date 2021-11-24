@@ -1,0 +1,47 @@
+@import "antd/dist/antd.css";
+
+// 变量
+:root {
+    // header
+    --header-height: 50px;
+
+    // breadcrumb
+    --breadcrumb-distance: 0 0 16px;
+
+    // content
+    --content-distance: 16px;
+}
+
+// table
+.ant-table {
+    .ant-table-body {
+        min-height: 170px;
+    }
+}
+
+.ant-layout {
+    background-color: #eeecec;
+}
+
+.table-operation {
+    .ant-btn {
+        padding: 0;
+        line-height: 1;
+        height: auto;
+    }
+}
+
+.layout-card {
+    .ant-card-body {
+        padding: 16px 0 0 0;
+    }
+    .ant-table-title {
+        padding: 0 16px 16px;
+        line-height: 40px;
+    }
+}
+
+// space
+.ant-space {
+    max-width: 100%;
+}
