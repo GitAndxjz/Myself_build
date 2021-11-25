@@ -1,10 +1,30 @@
 import {
     HomeOutlined,
 } from '@ant-design/icons';
-// import { merge } from 'lodash'
-import { lazy } from "react";
+import { merge } from 'lodash'
+import { lazy, LazyExoticComponent } from "react";
 
-export const routeConfig = [
+
+interface WokRoute {
+    title?: string;
+    path: string;
+    redirect?: string;
+    Component?: LazyExoticComponent<any>;
+    breadcrumb?: React.ComponentType | React.ElementType | string | null;
+    hideBreadcrumb?: boolean;
+    hideMenu?: boolean;
+    routes?: Omit<WokRoute, "children">[];
+    // todo 待实现
+    icon?: React.ReactNode;
+    layout?: false | {
+        header: boolean;
+        sidebar: boolean;
+        footer: boolean;
+    };
+}
+
+
+export const routeConfig: WokRoute[] = [
     {
         path: '/',
         redirect: '/home',
@@ -20,10 +40,12 @@ export const routeConfig = [
 ]
 
 
-export const getFlatRoutes = (routes: any) => {
 
-    const flatRoute = (routes: any, path?: string): any => {
-        return routes.reduce((wokRouteMap: any, route: any) => {
+
+export const getFlatRoutes = (routes: WokRoute[]) => {
+
+    const flatRoute = (routes: WokRoute[], path?: string): any => {
+        return routes.reduce((wokRouteMap: any, route) => {
             const { routes, ...newRoute } = route
 
             if (path) {
@@ -42,10 +64,10 @@ export const getFlatRoutes = (routes: any) => {
         }, {})
     }
 
-    return Object.values(flatRoute(routes)) as any
+    return Object.values(flatRoute(routes)) as WokRoute[]
 
 }
-function merge(wokRouteMap: any, arg1: any) {
-    throw new Error('Function not implemented.');
-}
+// function merge(wokRouteMap: any, arg1: any) {
+//     throw new Error('Function not implemented.');
+// }
 
