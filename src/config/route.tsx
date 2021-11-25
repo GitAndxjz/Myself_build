@@ -1,7 +1,7 @@
 import {
     HomeOutlined,
 } from '@ant-design/icons';
-import { merge } from 'lodash'
+// import { merge } from 'lodash'
 import { lazy } from "react";
 
 export const routeConfig = [
@@ -45,3 +45,7 @@ export const getFlatRoutes = (routes: any) => {
     return Object.values(flatRoute(routes)) as any
 
 }
+function merge(wokRouteMap: any, arg1: any) {
+    throw new Error('Function not implemented.');
+}
+

@@ -6,7 +6,7 @@ import { ConfigProvider } from "antd";
 import { BrowserRouter } from "react-router-dom";
 import "moment/locale/zh-cn";
 
-import WokLayout from "./component/layout/index";
+import WokLayout from "./components/layout/index";
 
 import zh_CN from "antd/lib/locale/zh_CN";
 

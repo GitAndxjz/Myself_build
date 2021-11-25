@@ -15,9 +15,9 @@ const overConfig = override(
     //     javascriptEnabled: true,
     //     modifyVars: { '@primary-color': '#009688' },
     // }),
-    // addWebpackAlias({
-    //     '@': path.resolve('./src')
-    // })
+    addWebpackAlias({
+        '@': path.resolve('./src')
+    })
 );
 
 module.exports = function (config, env) {
