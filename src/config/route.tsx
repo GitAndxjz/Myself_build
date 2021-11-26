@@ -28,7 +28,7 @@ export const routeConfig: WokRoute[] = [
     {
         path: '/',
         redirect: '/home',
-        hideMenu: true
+        hideMenu: true,
     },
     {
         title: "首页",
